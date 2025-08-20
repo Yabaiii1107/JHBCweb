@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jade Heights Baptist Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #00A36C;
+      color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header nav {
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      background: url('.jpg') center/cover no-repeat;
+      color: Black;
+      text-align: center;
+      padding: 50px 10px;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      line-height: 0.5;
+    }
+   .hero p {
+      font-family: "Dancing Script", cursive;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      line-height: 0.5;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+      position: center;
+    }
+    .section h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .section p {
+      text-align: center;
+      margin-bottom: 20px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 1.8rem; }
+    }
+ }
+    table {
+      width: 100%;
+      max-width: 900px;
+      border-collapse: collapse;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 20px, auto;
+    }
+    thead {
+      background-color: #00A36C;
+      color: white;
+    }
+    th, td {
+      padding: 15px 20px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        display: none;
+      }
+      tr {
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        background: white;
+        padding: 15px;
+      }
+      td {
+        border: none;
+        padding: 10px 15px;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+      }
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+        color: #2c3e50;
+      }
+    }
+    footer {
+      background-color: #00A36C;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Jade Heights Baptist Church</h1>
+      <div>
+        <a href="website2.html">Home</a>
+        <a href="ministry2.html">Ministries</a>
+        <a href="Events.html">Events</a>
+        <a href="contacts.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome</h2>
+    <h2>to</h2>
+    <h2>Jade Heights Baptist Church!</h2><br>
+    <p><b>Bringing The Gospel To All The World.</b></p>
+  </section>
+
+  <section id="about" class="section">
+    <h3>About Us</h3>
+    <p>Jade Heights Baptist Church is a welcoming place where faith grows and lives are transformed through the love of Jesus Christ.</p>
+  </section>
+
+  <section id="events" class="section">
+    <h3>Service Time</h3>
+    <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Event</th>
+        <th>Location</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Date">August 20, 2025</td>
+        <td data-label="Event">Bible Study Group</td>
+        <td data-label="Location">Church Hall</td>
+        <td data-label="Time">7:00 PM</td>
+      </tr>
+      <tr>
+        <td data-label="Date">September 5, 2025</td>
+        <td data-label="Event">Community Service Day</td>
+        <td data-label="Location">Neighborhood Park</td>
+        <td data-label="Time">9:00 AM</td>
+      </tr>
+      <tr>
+        <td data-label="Date">October 12-14, 2025</td>
+        <td data-label="Event">Youth Retreat</td>
+        <td data-label="Location">Camp Mountainview</td>
+        <td data-label="Time">All Day</td>
+      </tr>
+      <tr>
+        <td data-label="Date">November 25, 2025</td>
+        <td data-label="Event">Thanksgiving Service</td>
+        <td data-label="Location">Main Sanctuary</td>
+        <td data-label="Time">10:00 AM</td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+
+  <section id="contact" class="section">
+    <h3>Contact Us</h3>
+    <form>
+      <input type="text" placeholder="Your Name" required style="width:100%;padding:10px;margin-bottom:10px;">
+      <input type="email" placeholder="Your Email" required style="width:100%;padding:10px;margin-bottom:10px;">
+      <textarea placeholder="Your Message" style="width:100%;padding:10px;min-height:100px;"></textarea>
+      <button type="submit" style="padding:10px 20px;background:#00A36C;color:white;border:none;cursor:pointer;">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Jade Heights Baptist Church. All rights reserved.
+  </footer>
+</body>
+</html>

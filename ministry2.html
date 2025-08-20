@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Church Ministries</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+    header {
+      background-color: #00A36C;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #2c3e50;
+    }
+    .ministry-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 20px;
+      text-align: center;
+    }
+    .card-content h3 {
+      margin-top: 0;
+      color: #2c3e50;
+      font-size: 1.5rem;
+    }
+    .card-content p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #555;
+    }
+   a {
+     text-decoration: none;
+   }
+    footer {
+      background-color: #00A36C;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        margin: 0 8px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Ministries</h1>
+    <nav>
+      <a href="website2.html">Home</a>
+      <a href="ministry2.html">Ministries</a>
+      <a href="Events.html">Events</a>
+      <a href="contacts.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Serving Our Community</h2>
+    <div class="ministry-cards">
+      <div class="card">
+        <img src="youth-ministry.jpg" alt="Youth Ministry" />
+        <div class="card-content"> <a href="youth-ministry.html"></u>
+          <h3>Youth Ministry</h3>
+          <p>Helping young people grow in faith through fellowship, learning, and service.</p>
+        </a>
+       </div>
+      </div>
+      <div class="card">
+        <img src="music-ministry.jpg" alt="Music Ministry" />
+        <div class="card-content"> <a href="music&worship.html">
+         <h3>Music & Worship</h3>
+          <p>Leading the congregation in worship through music and praise.</p>
+        </a>
+       </div>
+      </div>
+      <div class="card">
+        <img src="community-outreach.jpg" alt="Community Outreach" />
+        <div class="card-content"><a href="community-outreach.html">
+          <h3>Community Outreach</h3>
+          <p>Serving the community through missions, charity, and support programs.</p>
+        </a>
+       </div>
+      </div>
+      <div class="card">
+        <img src="children-ministry.jpg" alt="Children's Ministry" />
+        <div class="card-content"><a href="children-ministry.html">
+          <h3>Children's Ministry</h3>
+          <p>Providing a nurturing environment for children to learn about faith.</p>
+        </a>
+       </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Jade Heights Baptist Church. All rights reserved.
+  </footer>
+</body>
+</html>
