@@ -1,64 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jade Heights Baptist Church</title>
-  
+
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
       color: #333;
       line-height: 1.6;
     }
+
     header {
       background: #00A36C;
       color: white;
       position: sticky;
       top: 0;
       z-index: 1000;
-      padding: 15px 20px;
     }
+
     .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 15px 20px;
     }
+
     header h1 {
       font-size: 1.5rem;
     }
+
     .nav-links {
       display: flex;
-      gap: 10px;
+      gap: 15px;
     }
+
     .nav-links a {
       color: white;
       text-decoration: none;
       font-weight: bold;
       padding: 8px;
     }
+
     .nav-links a:hover {
       text-decoration: underline;
     }
 
-    /* Hamburger Menu Styles */
+    /* Hamburger button */
     .hamburger {
       display: none;
       flex-direction: column;
       gap: 4px;
       cursor: pointer;
+      background: none;
+      border: none;
+      padding: 10px;
     }
+
     .hamburger div {
       width: 25px;
       height: 3px;
       background: white;
+    }
+
+    /* Dropdown nav for mobile */
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #00A36C;
+        animation: slideDown 0.3s ease forwards;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 12px 20px;
+        width: 100%;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     }
 
     .hero {
@@ -67,6 +118,7 @@
       text-align: center;
       padding: 60px 15px;
     }
+
     .hero h2 {
       font-size: 2.5rem;
       margin: 10px 0;
@@ -74,10 +126,12 @@
       transform: translateY(20px);
       transition: all 0.6s ease;
     }
+
     .hero h2.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     .hero p {
       font-family: "Dancing Script", cursive;
       font-size: 1.5rem;
@@ -85,6 +139,7 @@
       transform: translateY(20px);
       transition: all 0.6s ease 0.3s;
     }
+
     .hero p.visible {
       opacity: 1;
       transform: translateY(0);
@@ -95,6 +150,7 @@
       max-width: 1200px;
       margin: auto;
     }
+
     .section h3 {
       text-align: center;
       margin-bottom: 20px;
@@ -103,10 +159,12 @@
       transform: translateY(20px);
       transition: all 0.6s ease;
     }
+
     .section h3.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     .section p {
       text-align: center;
       margin-bottom: 20px;
@@ -115,6 +173,7 @@
       transform: translateY(20px);
       transition: all 0.6s ease 0.3s;
     }
+
     .section p.visible {
       opacity: 1;
       transform: translateY(0);
@@ -132,21 +191,24 @@
       transform: translateY(20px);
       transition: all 0.6s ease;
     }
+
     table.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     thead {
       background-color: #00A36C;
       color: white;
     }
+
     th, td {
       padding: 15px 20px;
       text-align: left;
       border-bottom: 1px solid #ddd;
       word-break: break-word;
     }
-    
+
     footer {
       background-color: #00A36C;
       color: white;
@@ -156,13 +218,15 @@
       font-size: 0.9rem;
     }
 
-    /* Responsive Layout */
+    /* Responsive table */
     @media (max-width: 768px) {
       table, thead, tbody, th, td, tr {
         display: block;
         width: 100%;
       }
+
       thead { display: none; }
+
       tr {
         margin-bottom: 15px;
         background: white;
@@ -170,6 +234,7 @@
         border-radius: 8px;
         padding: 15px;
       }
+
       td {
         padding: 10px 15px;
         position: relative;
@@ -177,6 +242,7 @@
         border: none;
         text-align: left;
       }
+
       td::before {
         content: attr(data-label);
         position: absolute;
@@ -186,26 +252,6 @@
         color: #2c3e50;
       }
     }
-
-    @media (max-width: 600px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #00A36C;
-      }
-      .nav-links.open {
-        display: flex;
-      }
-      header h1 {
-        font-size: 1.3rem;
-      }
-      .hero h2 { font-size: 2rem; }
-      .hero p { font-size: 1.2rem; }
-      .section h3 { font-size: 1.5rem; }
-      .section p { font-size: 1rem; }
-      .hamburger { display: flex; }
-    }
   </style>
 </head>
 <body>
@@ -213,15 +259,17 @@
   <header>
     <div class="nav-container">
       <h1>Jade Heights Baptist Church</h1>
-      <div class="hamburger" onclick="toggleMenu()">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">
         <div></div><div></div><div></div>
-      </div>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="ministry2.html">Ministries</a>
-        <a href="Events.html">Events</a>
-        <a href="contacts.html">Contact</a>
-      </div>
+      </button>
+    </div>
+
+    <!-- Dropdown Nav -->
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" onclick="closeMenu()">Home</a>
+      <a href="ministry2.html" onclick="closeMenu()">Ministries</a>
+      <a href="Events.html" onclick="closeMenu()">Events</a>
+      <a href="contacts.html" onclick="closeMenu()">Contact</a>
     </div>
   </header>
 
@@ -279,9 +327,19 @@
   </footer>
 
   <script>
-    // Hamburger toggle
     function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("open");
+      const nav = document.getElementById("navLinks");
+      const button = document.querySelector(".hamburger");
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      nav.classList.toggle("open");
+      button.setAttribute("aria-expanded", !expanded);
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById("navLinks");
+      const button = document.querySelector(".hamburger");
+      nav.classList.remove("open");
+      button.setAttribute("aria-expanded", false);
     }
 
     // Scroll animations
