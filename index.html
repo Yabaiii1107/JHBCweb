@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jade Heights Baptist Church</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #00A36C;
+      color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url("logo3.jpg") center/cover no-repeat;
+      color: black;
+      text-align: center;
+      padding: 60px 15px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin: 10px 0;
+    }
+
+    .hero p {
+      font-family: "Dancing Script", cursive;
+      font-size: 1.5rem;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .section p {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 20px auto;
+    }
+
+    thead {
+      background-color: #00A36C;
+      color: white;
+    }
+
+    th, td {
+      padding: 15px 20px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* Responsive Table */
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 15px;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        padding: 15px;
+      }
+
+      td {
+        padding: 10px 15px;
+        position: relative;
+        padding-left: 50%;
+        border: none;
+        text-align: left;
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+    }
+
+    footer {
+      background-color: #00A36C;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Navbar (optional hamburger menu placeholder) */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-links a {
+        padding: 10px 0;
+        width: 100%;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>Jade Heights Baptist Church</h1>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="ministry2.html">Ministries</a>
+        <a href="Events.html">Events</a>
+        <a href="contacts.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome</h2>
+    <h2>to</h2>
+    <h2>Jade Heights Baptist Church!</h2>
+    <br />
+    <p><b>Bringing The Gospel To All The World.</b></p>
+  </section>
+
+  <section id="about" class="section">
+    <h3>About Us</h3>
+    <p>Jade Heights Baptist Church is a welcoming place where faith grows and lives are transformed through the love of Jesus Christ.</p>
+  </section>
+
+  <section id="events" class="section">
+    <h3>Service Time</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Event</th>
+          <th>Location</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Day">Sunday</td>
+          <td data-label="Event">Sunday School</td>
+          <td data-label="Location">Jade Heights Baptist Church</td>
+          <td data-label="Time">9:00 AM</td>
+        </tr>
+        <tr>
+          <td data-label="Day">Sunday</td>
+          <td data-label="Event">Morning Service</td>
+          <td data-label="Location">Jade Heights Baptist Church</td>
+          <td data-label="Time">10:30 AM</td>
+        </tr>
+        <tr>
+          <td data-label="Day">Sunday</td>
+          <td data-label="Event">Afternoon Service</td>
+          <td data-label="Location">Jade Heights Baptist Church</td>
+          <td data-label="Time">1:30 PM</td>
+        </tr>
+        <tr>
+          <td data-label="Day">Wednesday</td>
+          <td data-label="Event">Prayer Meeting</td>
+          <td data-label="Location">Jade Heights Baptist Church</td>
+          <td data-label="Time">10:00 AM</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    &copy; 2025 Jade Heights Baptist Church. All rights reserved.
+  </footer>
+</body>
+</html>
