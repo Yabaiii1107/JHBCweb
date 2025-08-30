@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Youth Ministry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -16,6 +17,8 @@
       font-family: 'Roboto', sans-serif;
       background-color: #f5f5f5;
       color: #333;
+      line-height: 1.5;
+      font-size: 1rem; /* base font size */
     }
 
     header {
@@ -24,35 +27,48 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      padding: 15px 20px;
+      padding: 1rem 1.25rem;
     }
 
     .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px;
-      margin: auto;
+      flex-wrap: wrap; /* wrap nav links on narrow wider screens */
+      gap: 0.5rem;
     }
 
     h1 {
       font-size: 1.5rem;
+      flex-shrink: 0;
     }
 
     nav.desktop-nav {
       display: flex;
-      gap: 20px;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      flex-grow: 1;
     }
 
     nav.desktop-nav a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      padding: 8px;
+      font-weight: 700;
+      padding: 0.5rem 0.75rem;
+      font-size: 1rem;
+      white-space: nowrap; /* prevent breaking nav links */
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
     }
 
-    nav.desktop-nav a:hover {
+    nav.desktop-nav a:hover,
+    nav.desktop-nav a:focus {
       text-decoration: underline;
+      background-color: rgba(255 255 255 / 0.15);
+      outline: none;
     }
 
     /* Hamburger Menu */
@@ -60,13 +76,16 @@
       display: none;
       flex-direction: column;
       cursor: pointer;
+      gap: 4px;
+      flex-shrink: 0;
     }
 
     .hamburger div {
       width: 25px;
       height: 3px;
       background: white;
-      margin: 4px 0;
+      border-radius: 2px;
+      transition: all 0.3s ease;
     }
 
     /* Mobile dropdown menu */
@@ -75,14 +94,25 @@
       flex-direction: column;
       background-color: #00A36C;
       text-align: center;
+      max-width: 100%;
+      overflow: hidden;
+      font-size: 1rem;
+      border-top: 1px solid rgba(255 255 255 / 0.2);
     }
 
     .mobile-nav a {
       color: white;
       text-decoration: none;
-      padding: 10px;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      font-weight: bold;
+      padding: 1rem;
+      border-top: 1px solid rgba(255 255 255 / 0.2);
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a:focus {
+      background-color: rgba(255 255 255 / 0.15);
+      outline: none;
     }
 
     .mobile-nav.open {
@@ -91,17 +121,21 @@
 
     main {
       max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      width: 100%;
     }
 
     h2 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 2rem;
       font-size: 2rem;
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.6s ease;
+      max-width: 90ch;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     h2.visible {
@@ -114,10 +148,13 @@
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      margin-bottom: 30px;
+      margin-bottom: 3rem;
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.6s ease;
+      max-width: 90ch;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .card.visible {
@@ -132,25 +169,29 @@
     }
 
     .card-content {
-      padding: 20px;
+      padding: 1.25rem 1.5rem;
       text-align: center;
     }
 
     .card-content h3 {
       color: #2c3e50;
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
     }
 
     .card-content p {
-      font-size: 1rem;
+      font-size: 1.125rem;
       line-height: 1.6;
+      max-width: 75ch;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .image-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 10px;
-      margin-top: 15px;
+      gap: 0.75rem;
+      margin-top: 1rem;
     }
 
     .image-gallery img {
@@ -158,14 +199,24 @@
       height: 80px;
       object-fit: cover;
       border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .image-gallery img:hover,
+    .image-gallery img:focus {
+      transform: scale(1.05);
+      outline: none;
     }
 
     footer {
       background-color: #00A36C;
       color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+      padding: 1rem 1rem;
+      font-size: 1rem;
+      margin-top: 3rem;
+      max-width: 100%;
     }
 
     /* Responsive Design */
@@ -177,6 +228,40 @@
       .hamburger {
         display: flex;
       }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      .card-content h3 {
+        font-size: 1.25rem;
+      }
+
+      .card-content p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 0.75rem 1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .card-content h3 {
+        font-size: 1.125rem;
+      }
+
+      .card-content p {
+        font-size: 0.95rem;
+      }
+
+      .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      }
     }
   </style>
 </head>
@@ -187,45 +272,45 @@
       <h1>Youth Ministry</h1>
 
       <!-- Hamburger (Mobile Only) -->
-      <div class="hamburger" onclick="toggleMenu()">
+      <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0" onkeypress="if(event.key==='Enter') toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
       </div>
 
       <!-- Desktop Nav -->
-      <nav class="desktop-nav">
-        <a href="index.html">Home</a>
-        <a href="ministry2.html">Ministries</a>
-        <a href="Events.html">Events</a>
-        <a href="contacts.html">Contact</a>
+      <nav class="desktop-nav" role="navigation" aria-label="Primary Navigation">
+        <a href="index.html" tabindex="0">Home</a>
+        <a href="ministry2.html" tabindex="0">Ministries</a>
+        <a href="Events.html" tabindex="0">Events</a>
+        <a href="contacts.html" tabindex="0">Contact</a>
       </nav>
     </div>
 
     <!-- Mobile Nav Dropdown -->
-    <div class="mobile-nav" id="mobileNav">
-      <a href="index.html" onclick="closeMenu()">Home</a>
-      <a href="ministry2.html" onclick="closeMenu()">Ministries</a>
-      <a href="Events.html" onclick="closeMenu()">Events</a>
-      <a href="contacts.html" onclick="closeMenu()">Contact</a>
-    </div>
+    <nav class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile Navigation">
+      <a href="index.html" onclick="closeMenu()" tabindex="0">Home</a>
+      <a href="ministry2.html" onclick="closeMenu()" tabindex="0">Ministries</a>
+      <a href="Events.html" onclick="closeMenu()" tabindex="0">Events</a>
+      <a href="contacts.html" onclick="closeMenu()" tabindex="0">Contact</a>
+    </nav>
   </header>
 
   <main>
     <h2 class="scroll-item">Growing in Faith Together</h2>
 
     <div class="card scroll-item">
-      <img src="youth-ministry-main.jpg" alt="Youth Ministry Main">
+      <img src="youth-ministry-main.jpg" alt="Youth Ministry Main" />
       <div class="card-content">
         <h3>About Our Youth Ministry</h3>
         <p>Our Youth Ministry is committed to guiding young people in their walk with Christ through fellowship, Bible study, and community service. We provide a welcoming space where teens can build lasting friendships and deepen their faith.</p>
         <div class="image-gallery">
-          <img src="youth1.jpg" alt="Youth Event 1">
-          <img src="youth2.jpg" alt="Youth Event 2">
-          <img src="youth3.jpg" alt="Youth Event 3">
-          <img src="youth4.jpg" alt="Youth Event 4">
-          <img src="youth5.jpg" alt="Youth Event 5">
-          <img src="youth6.jpg" alt="Youth Event 6">
+          <img src="youth1.jpg" alt="Youth Event 1" />
+          <img src="youth2.jpg" alt="Youth Event 2" />
+          <img src="youth3.jpg" alt="Youth Event 3" />
+          <img src="youth4.jpg" alt="Youth Event 4" />
+          <img src="youth5.jpg" alt="Youth Event 5" />
+          <img src="youth6.jpg" alt="Youth Event 6" />
         </div>
       </div>
     </div>
