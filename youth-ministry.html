@@ -39,19 +39,19 @@
       font-size: 1.5rem;
     }
 
-    nav {
+    nav.desktop-nav {
       display: flex;
       gap: 20px;
     }
 
-    nav a {
+    nav.desktop-nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
       padding: 8px;
     }
 
-    nav a:hover {
+    nav.desktop-nav a:hover {
       text-decoration: underline;
     }
 
@@ -69,18 +69,20 @@
       margin: 4px 0;
     }
 
-    /* Dropdown nav for mobile */
+    /* Mobile dropdown menu */
     .mobile-nav {
       display: none;
       flex-direction: column;
       background-color: #00A36C;
       text-align: center;
-      padding-bottom: 10px;
     }
 
     .mobile-nav a {
+      color: white;
+      text-decoration: none;
       padding: 10px;
       border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: bold;
     }
 
     .mobile-nav.open {
@@ -166,9 +168,9 @@
       margin-top: 40px;
     }
 
-    /* Responsive styles */
+    /* Responsive Design */
     @media (max-width: 768px) {
-      nav {
+      nav.desktop-nav {
         display: none;
       }
 
@@ -176,7 +178,6 @@
         display: flex;
       }
     }
-
   </style>
 </head>
 <body>
@@ -185,7 +186,7 @@
     <div class="header-container">
       <h1>Youth Ministry</h1>
 
-      <!-- Hamburger Menu Icon -->
+      <!-- Hamburger (Mobile Only) -->
       <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
@@ -201,7 +202,7 @@
       </nav>
     </div>
 
-    <!-- Mobile Dropdown Nav -->
+    <!-- Mobile Nav Dropdown -->
     <div class="mobile-nav" id="mobileNav">
       <a href="index.html" onclick="closeMenu()">Home</a>
       <a href="ministry2.html" onclick="closeMenu()">Ministries</a>
@@ -246,7 +247,7 @@
       mobileNav.classList.remove('open');
     }
 
-    // Scroll animation using IntersectionObserver
+    // Scroll animation
     document.addEventListener('DOMContentLoaded', () => {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
