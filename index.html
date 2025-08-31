@@ -48,7 +48,7 @@
       gap: 15px;
     }
 
-     nav-links a {
+    nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
@@ -57,8 +57,8 @@
       transition: background-color 0.3s ease;
     }
 
-    nav-links a:hover,
-    nav-links a:focus {
+    nav a:hover,
+    nav a:focus {
       background-color: #007947;
       outline: none;
     }
@@ -93,18 +93,12 @@
         display: flex;
       }
 
-      .nav-links a {
+      .nav a {
         border-top: 1px solid rgba(255, 255, 255, 0.3);
         padding: 12px 20px;
         width: 100%;
       }
-
-    nav-links a:hover,
-    nav-links a:focus {
-      background-color: #007947;
-      outline: none;
-    }
-
+      
       .hamburger {
         display: flex;
       }
@@ -274,12 +268,18 @@
     </div>
 
     <!-- Dropdown Nav -->
-    <div class="nav-links" id="nav-links">
+     <nav>
+      <a href="index.html onclick="closeMenu()">Home</a>
+      <a href="ministry2.html">Ministries</a>
+      <a href="Events.html">Events</a>
+      <a href="contacts.html">Contact</a>
+    </nav>
+    <!-- <div class="nav-links" id="nav-links">
       <a href="index.html" onclick="closeMenu()">Home</a>
       <a href="ministry2.html" onclick="closeMenu()">Ministries</a>
       <a href="Events.html" onclick="closeMenu()">Events</a>
       <a href="contacts.html" onclick="closeMenu()">Contact</a>
-    </div>
+    </div> -->
   </header>
 
   <section class="hero">
@@ -369,6 +369,7 @@
   </script>
 </body>
 </html>
+
 
 
 
